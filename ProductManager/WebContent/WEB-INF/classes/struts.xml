@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="validateAccess" method="validateAccess" class="com.ibm.action.ValidationAction">
+			<result name="success">jsp/ProductManagerHome.jsp</result>
+			<result name="error">jsp/AccessDenied.jsp</result>
+		</action>
+		<action name="addProductRedirect" method="addProductRedirect" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/AddProduct.jsp</result>
+		</action>
+		<action name="addProductToDB" method="addProductToDB" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/AddProduct.jsp</result>
+		</action>
+		<action name="listProductFromDB" method="listProductFromDB" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/ListProduct.jsp</result>
+		</action>
+		<action name="homePageRedirect" method="homePageRedirect" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/ProductManagerHome.jsp</result>
+		</action>
+		<action name="deleteProductFromDB" method="deleteProductFromDB" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/ProductManagerHome.jsp</result>
+		</action>
+		<action name="updateProductRedirect" method="updateProductRedirect" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/UpdateProduct.jsp</result>
+		</action>
+		<action name="updateProductInDB" method="updateProductInDB" class="com.ibm.action.ProductManagerAction">
+			<result name="success">jsp/UpdateProduct.jsp</result>
+		</action>
+	</package>
+</struts>
